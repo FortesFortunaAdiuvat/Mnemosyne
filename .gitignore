@@ -1,0 +1,31 @@
+secrets# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+
+notes/
+
+# Virtual environment
+venv/
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Flask specific
+instance/
+*.pyc
+*.pyo
+*.pyd
+
+# API Keys
+app/secrets/
+secrets
+
+# Databases and logs
+app/data/
+*.log
+polygon.log
+*.db
+*.sqlite
+*.sqlite3
