@@ -2,6 +2,9 @@ secrets# Byte-compiled / optimized Python files
 __pycache__/
 *.pyc
 
+#temp files to ignore
+run.sh
+
 notes/
 
 # Virtual environment

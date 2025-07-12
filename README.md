@@ -74,8 +74,7 @@ This project follows Test-Driven Development (TDD) and Behavior-Driven Developme
 - [ ] Study session management
 - [ ] Progress tracking and analytics
 - [ ] Frontend interface
+- [ ] Migrate to UV package management and Ruff
+- [ ] Use TOML files to manage information sources
 
 ---
-
-
-

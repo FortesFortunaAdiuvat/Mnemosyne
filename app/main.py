@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes import cards
+from app.core.database import create_tables
 
 # Create FastAPI instance
 app = FastAPI(
@@ -7,6 +9,11 @@ app = FastAPI(
     description="A spaced repetition learning system API",
     version="1.0.0"
 )
+
+# Create database tables on startup
+@app.on_event("startup")
+def startup_event():
+    create_tables()
 
 # Add CORS middleware
 app.add_middleware(
@@ -38,6 +45,10 @@ async def api_info():
             "root": "/",
             "health": "/health",
             "docs": "/docs",
-            "redoc": "/redoc"
+            "redoc": "/redoc",
+            "cards": "/api/cards"
         }
     }
+
+# Include routers
+app.include_router(cards.router, prefix="/api/cards", tags=["cards"])
