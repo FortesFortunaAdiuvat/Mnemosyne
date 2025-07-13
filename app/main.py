@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import cards
+from app.api.routes import cards, study
 from app.core.database import create_tables
 
 # Create FastAPI instance
@@ -52,3 +52,4 @@ async def api_info():
 
 # Include routers
 app.include_router(cards.router, prefix="/api/cards", tags=["cards"])
+app.include_router(study.router, prefix="/api/study", tags=["study"])
