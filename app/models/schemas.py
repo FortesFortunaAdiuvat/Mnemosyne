@@ -93,3 +93,63 @@ class StudyStatsResponse(BaseModel):
     total_sessions: int
     total_cards_studied: int
     average_accuracy: float
+
+
+class DailyDueCountResponse(BaseModel):
+    """Schema for daily due card count"""
+    date: str
+    due_count: int
+    by_deck: dict[str, int]
+
+
+class WeeklyProgressResponse(BaseModel):
+    """Schema for weekly progress"""
+    start_date: str
+    end_date: str
+    daily_stats: list[dict]
+
+
+class LearningStreakResponse(BaseModel):
+    """Schema for learning streak"""
+    current_streak: int
+    longest_streak: int
+    last_study_date: Optional[str]
+
+
+class MonthlyHeatmapResponse(BaseModel):
+    """Schema for monthly activity heatmap"""
+    year_month: str
+    activity_data: list[dict]
+
+
+class DeckProgressResponse(BaseModel):
+    """Schema for deck progress over time"""
+    deck_name: str
+    period_days: int
+    progress_data: list[dict]
+
+
+class ReminderCreate(BaseModel):
+    """Schema for creating study reminders"""
+    time: str = Field(..., pattern="^([01]?[0-9]|2[0-3]):[0-5][0-9]$")
+    enabled: bool = True
+    deck_names: list[str] = []
+
+
+class ReminderResponse(BaseModel):
+    """Schema for reminder responses"""
+    id: int
+    time: str
+    enabled: bool
+    deck_names: list[str]
+    created_at: datetime
+    updated_at: Optional[datetime]
+
+    class Config:
+        from_attributes = True
+
+
+class UpcomingReviewsResponse(BaseModel):
+    """Schema for upcoming reviews"""
+    period_days: int
+    upcoming_reviews: list[dict]
