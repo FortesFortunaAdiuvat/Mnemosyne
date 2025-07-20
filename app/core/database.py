@@ -30,7 +30,10 @@ def get_db():
 
 def create_tables():
     """Create all tables in the database"""
-    from app.models.card import Base as CardBase
-    from app.models.study_session import Base as StudyBase
-    CardBase.metadata.create_all(bind=engine)
-    StudyBase.metadata.create_all(bind=engine)
+    # Import all models to ensure they're registered with Base
+    from app.models.card import Card
+    from app.models.study_session import StudySession, CardReview
+    from app.models.calendar import DailyActivity, StudyReminder
+    
+    # Create all tables using the shared Base
+    Base.metadata.create_all(bind=engine)
