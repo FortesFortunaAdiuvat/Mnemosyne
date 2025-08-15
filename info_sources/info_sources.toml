@@ -1,0 +1,106 @@
+# info_sources.toml
+# Configuration for subject-based data sources (YouTube, RSS feeds, etc.)
+
+title = "Subject Data Sources Configuration"
+version = 1.0
+last_updated = 2025-07-07T12:00:00Z
+
+[subjects.world_news]
+description = "Underground News Stories and Review on WW3 and various geopolitical events"
+
+[[subjects.world_news.youtube_channels]]
+name = "Prepper News"
+url = "https://www.youtube.com/@preppernewsflash"
+
+[[subjects.world_news.youtube_channels]]
+name = "Gerald Celente"
+url = "https://www.youtube.com/@gcelente"
+
+[[subjects.world_news.youtube_channels]]
+name = "Anonymous Official"
+url = "https://www.youtube.com/@-anonymous"
+
+[[subjects.world_news.youtube_channels]]
+name = "FirstPost"
+url = "https://www.youtube.com/@Firstpost"
+
+
+[subjects.tech]
+description = "Technology, software development, and gadgets"
+
+[[subjects.tech.youtube_channels]]
+name = "TechWithTim"
+url = "https://www.youtube.com/@TechWithTim"
+language = "English"
+subscriber_count = 500000
+average_rating = 4.8
+
+[[subjects.tech.youtube_channels]]
+name = "Fireship"
+url = "https://www.youtube.com/@Fireship"
+language = "English"
+subscriber_count = 1500000
+average_rating = 4.9
+
+[[subjects.tech.rss_feeds]]
+name = "TechCrunch"
+url = "https://techcrunch.com/feed/"
+update_frequency = "daily"
+
+[[subjects.tech.rss_feeds]]
+name = "The Verge"
+url = "https://www.theverge.com/rss/index.xml"
+update_frequency = "daily"
+
+
+[subjects.finance]
+description = "Finance, investing, and crypto"
+
+[[subjects.finance.youtube_channels]]
+name = "Graham Stephan"
+url = "https://www.youtube.com/@GrahamStephan"
+subscriber_count = 4000000
+verified = true
+
+[[subjects.finance.youtube_channels]]
+name = "Coin Bureau"
+url = "https://www.youtube.com/@CoinBureau"
+subscriber_count = 2500000
+
+[[subjects.finance.websites]]
+name = "Investopedia"
+url = "https://www.investopedia.com"
+monthly_visits = 15000000
+
+[[subjects.finance.websites]]
+name = "CoinMarketCap"
+url = "https://coinmarketcap.com"
+monthly_visits = 30000000
+
+[[subjects.finance.youtube_channels]]
+name = "Crypto Love"
+url = "https://www.youtube.com/@CryptoLove"
+
+[[subjects.finance.youtube_channels]]
+name = "Alex Becker's Channel"
+url = "https://www.youtube.com/@AlexBeckersChannel"
+
+
+[subjects.education]
+description = "Learning, courses, and self-improvement"
+
+[[subjects.education.youtube_channels]]
+name = "Kurzgesagt"
+url = "https://www.youtube.com/@Kurzgesagt"
+categories = ["Science", "Explainers"]
+
+[[subjects.education.youtube_channels]]
+name = "Veritasium"
+url = "https://www.youtube.com/@Veritasium"
+host = "Derek Muller"
+
+[[subjects.education.podcasts]]
+name = "The Daily"
+url = "https://rss.art19.com/the-daily"
+language = "English"
+notes = "Daily news analysis podcast"
